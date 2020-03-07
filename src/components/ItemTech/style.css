@@ -1,0 +1,13 @@
+li {
+  margin-bottom: 8px;
+}
+
+li > button {
+  margin-left: 10px;
+  border: 1px solid #fff;
+  background: none;
+  padding: 4px;
+  outline: none;
+  color: #fff;
+  border-radius: 8px;
+}

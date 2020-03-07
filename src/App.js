@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
 
-import profile from "./assets/images/diego_perfil.jpg";
+import ListTech from "./components/ListTech";
+
 function App() {
-  return <img src={profile} />;
+  return <ListTech />;
 }
 
 export default App;
