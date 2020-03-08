@@ -5,8 +5,31 @@ import TechItem from "../ItemTech";
 export default class ListTech extends Component {
   state = {
     newTech: "",
-    techs: ["Node.js", "React", "React Native"]
+    techs: []
   };
+
+  // Executado assim que o componente aparece em tela
+  componentDidMount() {
+    const techs = localStorage.getItem("techs");
+    if (techs) {
+      this.setState({
+        techs: JSON.parse(techs)
+      });
+    }
+  }
+
+  // Executado sempre que ouver alteração da props ou stado
+  componentDidUpdate(prevProps, prevState) {
+    // this.props
+    // this.state
+
+    if (prevState.techs !== this.state.techs) {
+      localStorage.setItem("techs", JSON.stringify(this.state.techs));
+    }
+  }
+
+  // quando co componente deixa de existir
+  componentWillUnmount() {}
 
   handleInputChange = e => {
     this.setState({
